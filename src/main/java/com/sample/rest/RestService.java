@@ -1,6 +1,7 @@
 package com.sample.rest;
 
 import com.sample.service.MyService;
+import java.util.logging.Level;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
@@ -9,11 +10,13 @@ import org.springframework.stereotype.Component;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
 
 @Component
 @Path("/coin")
 public class RestService {
- 
+
     @Autowired
     MyService delegate;
 
@@ -25,6 +28,24 @@ public class RestService {
     public Response greet() {
         String result = delegate.greet();
         return Response.status(200).entity(result).build();
+    }
+
+    @GET
+    @Path("/json")
+    public JSONObject json() {
+//        JSONObject myObject = new JSONObject();
+
+        JSONObject myObject = new JSONObject();
+        try {
+            myObject.put("name", "Agamemnon");
+            myObject.put("age", 32);
+        } catch (JSONException ex) {
+//     LOGGER.log(Level.SEVERE, "Error ...", ex);
+        }
+        return myObject;
+
+//        String result = delegate.greet();
+//        return Response.status(200).entity(result).build();
     }
 
     /**

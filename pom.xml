@@ -28,7 +28,11 @@
             <artifactId>jersey-server</artifactId>
             <version>${version.jersey}</version>
         </dependency>
-    
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+            <version>${version.jersey}</version>
+        </dependency>    
         <!-- Jersey + Spring -->
         <dependency>
             <groupId>com.sun.jersey.contribs</groupId>
