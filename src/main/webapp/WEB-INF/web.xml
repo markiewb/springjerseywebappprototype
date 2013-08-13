@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-    <display-name>springjerseywebapp</display-name>
-    <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
-    </session-config>
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-        </welcome-file-list>
-    </web-app>
 -->
-
-
-
 <web-app id="WebApp_ID" version="2.4"
 	xmlns="http://java.sun.com/xml/ns/j2ee" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -21,6 +8,7 @@
 	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 	<display-name>springjerseywebapp</display-name>
  
+        <!-- spring integration-->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
@@ -30,10 +18,12 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
  
+        <!-- jersey integration -->
 	<servlet>
 		<servlet-name>jersey-serlvet</servlet-name>
 		<servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
 		<init-param>
+                        <!-- defines where the REST resources are -->
 			<param-name>com.sun.jersey.config.property.packages</param-name>
 			<param-value>com.mkyong.rest</param-value>
 		</init-param>
@@ -42,6 +32,7 @@
  
 	<servlet-mapping>
 		<servlet-name>jersey-serlvet</servlet-name>
+                <!-- defines the root context for the REST resources -->
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
  
