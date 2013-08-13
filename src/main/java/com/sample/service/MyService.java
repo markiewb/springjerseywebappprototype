@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mkyong.transaction.impl;
+package com.sample.service;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class TransactionBoImpl {
+public class MyService {
  
-    public String save() {
-        return "Jersey + Spring example";
+    public String greet() {
+        return "Hello colorful world.";
     }
 
 }

@@ -1,50 +1,47 @@
-package com.mkyong.rest;
+package com.sample.rest;
 
+import com.sample.service.MyService;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.mkyong.transaction.impl.TransactionBoImpl;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Component
-@Path("/payment")
-public class PaymentService {
+@Path("/coin")
+public class RestService {
  
     @Autowired
-    TransactionBoImpl transactionBo;
+    MyService delegate;
 
     /**
-     * http://localhost:8080/springjerseywebapp/rest/payment/mkyong
+     * http://localhost:8080/springjerseywebapp/rest/coin/greet
      */
     @GET
-    @Path("/mkyong")
-    public Response savePayment() {
-
-        String result = transactionBo.save();
-
+    @Path("/hello")
+    public Response greet() {
+        String result = delegate.greet();
         return Response.status(200).entity(result).build();
-
     }
 
     /**
-     * http://localhost:8080/springjerseywebapp/rest/payment/coin/42
+     * http://localhost:8080/springjerseywebapp/rest/coin/info/42
      */
     @GET
-    @Path("/coin/{id}")
+    @Path("/info/{id}")
     @Produces(MediaType.TEXT_PLAIN)
     public String getCoinText(@PathParam("id") int number) {
         return "Coin: " + number;
     }
 
     /**
-     * http://localhost:8080/springjerseywebapp/rest/payment/coin/42/html
+     * http://localhost:8080/springjerseywebapp/rest/coin/info/42/html
      */
     @GET
-    @Path("/coin/{id}/html")
+    @Path("/info/{id}/html")
     @Produces(MediaType.TEXT_HTML)
     public String getCoinHTML(@PathParam("id") int number) {
         return "<html><body><b>Coin: </b>" + number + "</body></html>";
