@@ -1,6 +1,6 @@
 Description:
 
-Miminal prototype which integrates JAX-RS (Jersey) with Spring 2.5.x. All
+Miminal prototype which integrates JAX-RS 1.x (Jersey 1.x) with Spring 2.5.x. All
 included in a minimal maven based webapp.
 
 Usage:
@@ -13,7 +13,7 @@ Usage:
 
 Uses:
 * Spring 2.5.6
-* Jersey 1.17.1
+* Jersey 1.17.1 (JAX-RS 1.x)
 
 Supports:
 * Servlet Container 2.5
@@ -22,3 +22,4 @@ Resources
 * http://www.mkyong.com/webservices/jax-rs/jersey-spring-integration-example/
 * http://www.javakaffee.de/blog/2008/04/21/jersey-spring-integration-mostly-complete/
 * http://juristr.com/blog/2011/08/integrating-jersey-with-spring/
+* https://jersey.java.net/documentation/1.17/index.html
