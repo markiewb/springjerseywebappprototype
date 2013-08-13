@@ -5,15 +5,13 @@
  */
 package com.mkyong.transaction.impl;
 
-import com.mkyong.transaction.TransactionBo;
+import org.springframework.stereotype.Component;
 
-public class TransactionBoImpl implements TransactionBo {
-
-    @Override
+@Component
+public class TransactionBoImpl {
+ 
     public String save() {
-
         return "Jersey + Spring example";
-
     }
 
 }

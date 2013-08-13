@@ -5,8 +5,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.mkyong.transaction.TransactionBo;
-import javax.ws.rs.PUT;
+import com.mkyong.transaction.impl.TransactionBoImpl;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -14,9 +13,9 @@ import javax.ws.rs.core.MediaType;
 @Component
 @Path("/payment")
 public class PaymentService {
-
+ 
     @Autowired
-    TransactionBo transactionBo;
+    TransactionBoImpl transactionBo;
 
     /**
      * http://localhost:8080/springjerseywebapp/rest/payment/mkyong
