@@ -37,7 +37,6 @@ public class RestService {
         try {
             myObject.put("inner", createJsonObj());
         } catch (JSONException ex) {
-            Logger.getLogger(RestService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return myObject;
 
