@@ -2,6 +2,7 @@ package com.sample.rest;
 
 import com.sample.service.MyService;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
@@ -33,19 +34,27 @@ public class RestService {
     @GET
     @Path("/json")
     public JSONObject json() {
-//        JSONObject myObject = new JSONObject();
-
-        JSONObject myObject = new JSONObject();
+        JSONObject myObject = createJsonObj();
         try {
-            myObject.put("name", "Agamemnon");
-            myObject.put("age", 32);
+            myObject.put("inner", createJsonObj());
         } catch (JSONException ex) {
-//     LOGGER.log(Level.SEVERE, "Error ...", ex);
+            Logger.getLogger(RestService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return myObject;
 
 //        String result = delegate.greet();
 //        return Response.status(200).entity(result).build();
+    }
+
+    private JSONObject createJsonObj() {
+//        JSONObject myObject = new JSONObject();
+        JSONObject myObject = new JSONObject();
+        try {
+            myObject.put("name", "Agamemnon").put("age", 32);
+        } catch (JSONException ex) {
+//     LOGGER.log(Level.SEVERE, "Error ...", ex);
+        }
+        return myObject;
     }
 
     /**
