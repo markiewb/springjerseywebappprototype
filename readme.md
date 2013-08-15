@@ -6,9 +6,9 @@ Usage:
 * Run webapp via NetBeans OR
 * Run via `mvn tomcat:run` OR
 * Open one of the following URLs in your web browser and experiment!
-  * [http://localhost:8080/springjerseywebapp/rest/coin/greet](http://localhost:8080/springjerseywebapp/rest/coin/greet)
-  * [http://localhost:8080/springjerseywebapp/rest/coin/info/42](http://localhost:8080/springjerseywebapp/rest/coin/info/42)
-  * [http://localhost:8080/springjerseywebapp/rest/coin/info/42/html](http://localhost:8080/springjerseywebapp/rest/coin/info/42/html)
+  * [http://localhost:8080/springjerseywebappprototype/rest/coin/greet](http://localhost:8080/springjerseywebappprototype/rest/coin/greet)
+  * [http://localhost:8080/springjerseywebappprototype/rest/coin/info/42](http://localhost:8080/springjerseywebappprototype/rest/coin/info/42)
+  * [http://localhost:8080/springjerseywebappprototype/rest/coin/info/42/html](http://localhost:8080/springjerseywebappprototype/rest/coin/info/42/html)
 
 Uses:
 ---------
